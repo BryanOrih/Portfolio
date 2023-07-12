@@ -1,0 +1,14 @@
+.HomePage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+.HomeImage > *{
+    overflow: none;
+}
+.MainText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
