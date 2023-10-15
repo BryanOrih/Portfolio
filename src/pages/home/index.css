@@ -1,14 +1,46 @@
+@import url('https://fonts.cdnfonts.com/css/lusitana');
 .HomePage{
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
+    overflow: hidden;
 }
 .HomeImage > *{
     overflow: none;
 }
 .MainText{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 25px;
+    font-family: 'Lusitana', sans-serif;
+}
+.MainText > *{
+    margin-left: -70px;
+}
+.HomeImage{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+}
+.MainText > p, .MainText > h1{
+    text-align: start;
+}
+.MainText > a > button{
+    cursor: pointer;
+    margin-right: 100%;
+    background-color: #111A1F;
+    color: white;
+    width: 124px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 100;
+}
+.MainText > a > button:hover{
+    -webkit-transition: .3s all;
+    transition: .3s all;
+    opacity: .9;
+}
+.MainText > p:last-child{
+    margin-right: 13em;
 }

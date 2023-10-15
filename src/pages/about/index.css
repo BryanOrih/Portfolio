@@ -1,0 +1,27 @@
+.AboutSection{
+    display: flex;
+    flex-direction: column;
+}
+.AboutMe{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+
+    & div:last-child{
+        text-align: start;
+        & h1{
+            font-size: 4em;
+        }
+        & p:first-child{
+            font-size: 1em;
+        }
+        & p:last-child{
+            font-size: 1.2em;
+        }
+    }
+}
+.RandomFacts{
+
+}
+.MyStory{
+
+}

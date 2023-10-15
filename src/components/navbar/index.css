@@ -1,24 +1,28 @@
+
 #PortfolioNav{
     display: grid;
     grid-template-columns: 2fr 4fr 3fr;;
     color: white;
     font-family: Inter;
     align-items: center;
+    animation-name: dropDown;
 }
 #PortfolioNav{
     background: #111A1F;
     width: 100vw;
     height: 92px;
 }
-.SocialLinks > i{
-    font-size: 2rem;
+.SocialLinks > a > i{
+    font-size: 1.7rem;
     cursor: pointer;
+    color:white;
 }
 /*SECTION - Individual section */
-#PortfolioNav > img{
+#PortfolioNav > a > img{
     width: auto;
     height: 62px;
-    margin-left: 100%;
+    margin-left: 15vw;
+    cursor: pointer;
 }
 .SocialLinks{
     display: flex;
@@ -34,4 +38,32 @@
     font-size: 1rem;
     font-family: "proxima nova light", "Helvetica Neue", Helvetica, Arial, Sans-serif;
     font-weight: 100;
+}
+/*SECTION - Animation  */
+#PortfolioNav > a > img:hover, :is(.NavLinks, .SocialLinks) > *:hover {
+    -webkit-transition: .3s all;
+    transition: .3s all;
+    opacity: 0.5;
+}
+
+@keyframes dropDown {
+    0%{
+        opacity: 0;
+        margin-top: -6em
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes pickUp{
+    0%{
+        opacity: 1;
+        margin-top: 0
+    }
+    100%{
+        opacity: 0;
+        margin-top: -6em;
+    }
 }

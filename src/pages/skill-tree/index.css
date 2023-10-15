@@ -1,0 +1,42 @@
+.Timeline{
+    padding-top: 2em;
+    height: 800px;
+    opacity: 1;
+    &::after{
+        content: "";
+        position: absolute;
+        width: 6px;
+        background: #020133;
+        top: 0em;
+        bottom: 0;
+        left: 0;
+        margin-left: -3px;
+        z-index: -2;
+        border: medium solid #f68c09;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #f68c09 transparent transparent;  
+        --size: 50px;
+        --b: 10px;
+        --p: 25px;
+        --R: calc(55.9px + var(--b)/2);
+        --_g: #0000 calc(99% - var(--b)),#000 calc(101% - var(--b)) 99%,#0000 101%;
+        -webkit-mask:
+          radial-gradient(var(--R) at top 50% right calc(-1*var(--p)),var(--_g)) 
+            calc(50% - var(--size)/2 - var(--b)/2) calc(50% - 2*var(--size)) / calc(var(--size) + var(--b)) calc(4*var(--size)) ,
+          radial-gradient(var(--R) at top 50% left  calc(-1*var(--p)),var(--_g)) 
+           calc(50% + var(--size)/2 + var(--b)/2) 50%/calc(var(--size) + var(--b)) calc(4*var(--size)) ;
+        width: 100vw;
+        mask-repeat: repeat-y;
+        mask-border: 1000px round;
+    }
+}
+@keyframes root {
+    from{
+        height: 0px;
+        opacity: 0;
+    }
+    to{
+        height: 800px;
+        opacity: 1;
+    }
+}

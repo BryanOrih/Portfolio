@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import './index.css'
 import { Canvas } from '@react-three/fiber'
-import Blob from '../../components/blob'
+import MainPageBlob from '../../components/mainPageBlob'
+import { MainContext } from '../../context/MainContext'
+import { Link, useNavigate} from 'react-router-dom'
 const Home = () => {
+  const {setCurrentPage, setNavTransition, setNavTranslate} = useContext(MainContext)
+  useEffect(()=>{
+    setCurrentPage("Home")
+  },[])
+  
+  const handleClick = ()=>{
+    setNavTransition("none")
+    setNavTranslate("translateY(-100px)");
+  }
   return (
     <div className='HomePage'>
       <div className='HomeImage'>
-       <Canvas camera={{position: [0.0, 0.0, 8.0]}}>
-        <Blob/>
-       </Canvas>
+        <MainPageBlob/>
       </div>
       <div className='MainText'>
-        <h1>Bryan Orihuela Alvarez</h1>
+        <h1>Bryan<br/> Orihuela Alvarez</h1>
         <p>Full-Stack Software Developer</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp amet, consectetur adipiscing elit, sed do </p>
-        <button>Contact</button>
+        <p>Welcome! I'm a business and coding enthusiast with a super cool <br/> dog/support animal named Toby.
+         With his amazing energy coupled <br/>with my hard work, I can code nearly anything!
+        </p>
+        <Link to={"/Contact"}><button onClick={handleClick}>Contact</button></Link>
       </div>
     </div>
   )
